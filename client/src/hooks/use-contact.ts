@@ -1,39 +1,35 @@
 import { useMutation } from "@tanstack/react-query";
-import { api, type InsertMessage } from "@shared/routes";
 import { useToast } from "@/hooks/use-toast";
+
+type ContactFormValues = {
+  name: string;
+  email: string;
+  message: string;
+};
 
 export function useContactForm() {
   const { toast } = useToast();
 
   return useMutation({
-    mutationFn: async (data: InsertMessage) => {
-      const res = await fetch(api.contact.submit.path, {
-        method: api.contact.submit.method,
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
+    mutationFn: async (data: ContactFormValues) => {
+      // Simulate network delay
+      await new Promise((resolve) => setTimeout(resolve, 1000));
 
-      if (!res.ok) {
-        if (res.status === 400) {
-          const error = api.contact.submit.responses[400].parse(await res.json());
-          throw new Error(error.message);
-        }
-        throw new Error("Failed to send message");
-      }
+      // Log for now (replace later with EmailJS / API)
+      console.log("Contact form submitted:", data);
 
-      return api.contact.submit.responses[201].parse(await res.json());
+      return true;
     },
     onSuccess: () => {
       toast({
-        title: "Message Sent!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
-        variant: "default",
+        title: "Message sent!",
+        description: "Thanks for reaching out. I’ll get back to you soon.",
       });
     },
-    onError: (error) => {
+    onError: () => {
       toast({
-        title: "Error",
-        description: error.message,
+        title: "Something went wrong",
+        description: "Please try again later.",
         variant: "destructive",
       });
     },
