@@ -78,20 +78,20 @@ export default function Home() {
 
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
                 <Button className="h-14 px-8 text-lg rounded-full shadow-xl shadow-primary/20 bg-primary hover:bg-primary/90 text-white">
-                  <a href="#projects">View My Work</a>
+                  <a href="#contact">Let's Connect</a>
                 </Button>
-                <Button variant="outline" className="h-14 px-8 text-lg rounded-full border-2">
+                {/* <Button variant="outline" className="h-14 px-8 text-lg rounded-full border-2">
                   <Download className="mr-2 h-5 w-5" />
                   Download CV
-                </Button>
+                </Button> */}
               </div>
 
               <div className="flex items-center justify-center lg:justify-start gap-6 pt-4">
                 {[
-                  { icon: <Linkedin size={24} />, href: "https://linkedin.com" },
-                  { icon: <Github size={24} />, href: "https://github.com" },
-                  { icon: <Twitter size={24} />, href: "https://x.com" },
-                  { icon: <Instagram size={24} />, href: "https://instagram.com" },
+                  { icon: <Linkedin size={24} />, href: "https://www.linkedin.com/in/mayur-koshti-9643a615/" },
+                  { icon: <Github size={24} />, href: "https://github.com/mayurkoshti12" },
+                  { icon: <Twitter size={24} />, href: "https://x.com/mayurkoshti12" },
+                  { icon: <Instagram size={24} />, href: "https://www.instagram.com/mayurkoshti.12/" },
                 ].map((social, i) => (
                   <a 
                     key={i} 
@@ -124,7 +124,7 @@ export default function Home() {
                 
                 {/* Floating Badge 1 */}
                 <motion.div 
-                  className="absolute -left-4 top-10 bg-card p-4 rounded-xl shadow-lg border border-border/50 flex items-center gap-3"
+                  className="absolute -left-4  bg-white  top-10 bg-card p-4 rounded-xl shadow-lg border border-border/50 flex items-center gap-3"
                   animate={{ y: [0, -10, 0] }}
                   transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
                 >
@@ -139,7 +139,7 @@ export default function Home() {
 
                 {/* Floating Badge 2 */}
                 <motion.div 
-                  className="absolute -right-4 bottom-10 bg-card p-4 rounded-xl shadow-lg border border-border/50 flex items-center gap-3"
+                  className="absolute -right-4 bg-white bottom-10 bg-card p-4 rounded-xl shadow-lg border border-border/50 flex items-center gap-3"
                   animate={{ y: [0, 10, 0] }}
                   transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 1 }}
                 >
@@ -365,7 +365,7 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground font-semibold">Email</p>
-                    <p className="text-lg font-bold">mayurkoshti12@gmail.in</p>
+                    <p className="text-lg font-bold">mayurkoshti12@gmail.com</p>
                   </div>
                 </div>
 
@@ -399,10 +399,10 @@ export default function Home() {
 
             <div className="flex gap-6">
               {[
-                { icon: <Linkedin size={20} />, href: "https://linkedin.com" },
-                { icon: <Github size={20} />, href: "https://github.com" },
-                { icon: <Facebook size={20} />, href: "https://facebook.com" },
-                { icon: <Twitter size={20} />, href: "https://x.com" },
+                { icon: <Linkedin size={20} />, href: "https://www.linkedin.com/in/mayur-koshti-9643a615/" },
+                { icon: <Github size={20} />, href: "https://github.com/mayurkoshti12" },
+                { icon: <Facebook size={20} />, href: "https://www.facebook.com/mayur.koshti.71/" },
+                { icon: <Twitter size={20} />, href: "https://x.com/mayurkoshti12" },
               ].map((social, i) => (
                 <a 
                   key={i} 
